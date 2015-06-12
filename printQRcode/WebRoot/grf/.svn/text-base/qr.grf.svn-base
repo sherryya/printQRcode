@@ -1,0 +1,121 @@
+﻿Object Report
+	Version='6.0.0.2'
+	Title='6f.发票成批套打'
+	Author='锐浪报表软件'
+	Description='演示发票成批套打。\r\n1、定义一个分组，以发票单号作为分组依据字段。\r\n2、将整个发票分解为三个区域：头、明细、尾，分别对应报表的分组头、明细网格、分组尾。\r\n3、将空白发票的扫描图作为报表设计背景图，在页面视图中插入部件框，根据背景图定位位置与确定大小。\r\n4、分组尾上的部件框不能按背景图定位\r\n5、设定合适的综合文字框的“字间距”属性值让文字输出到正确金额位栏中。\r\n6、设置综合文字框前加“*”文字实现圆圈中画叉图形的输出。\r\n7、在金额大写综合文字框上写脚本，当金额达到最高位时，不显示最前面的圈叉符号。'
+	AlignToGrid=F
+	Object Font
+		Name='宋体'
+		Size=105000,0
+		Weight=400
+		Charset=134
+	End
+	BackImagePreview=T
+	Object Printer
+		Size=256
+		Width=5
+		Height=4
+		LeftMargin=0
+		TopMargin=0.05
+		RightMargin=0
+		BottomMargin=0
+	End
+	Object DetailGrid
+		ShowColLine=F
+		ShowRowLine=F
+		AppendBlankRow=T
+		Object Border
+			Styles=[]
+			Object Pen
+				Width=0
+			End
+		End
+		Object ColLine
+			Color=00646F71
+		End
+		Object RowLine
+			Color=00646F71
+		End
+		Object Recordset
+			Items Field
+				Item
+					Name='terminal_imei'
+					Tag='车机imei'
+					Length=20
+				End
+			End
+		End
+		Items Column
+			Item
+				Name='TerminalImei'
+				Width=4.70958
+			End
+		End
+		Object ColumnContent
+			Height=3.57188
+			AdjustRowHeight=F
+			RowsPerPage=5
+			Items ColumnContentCell
+				Item
+					Column='TerminalImei'
+					FreeCell=T
+					Items Control
+						Item
+							Type=FieldBox
+							Name='FieldBox1'
+							Left=0.9525
+							Top=2.75167
+							Width=2.64583
+							Height=0.529167
+							DataField='terminal_imei'
+						End
+						Item
+							Type=Barcode
+							Name='Barcode17'
+							Left=0.185208
+							Top=0.3175
+							Width=4.25979
+							Height=2.48708
+							BarcodeType=QRCode
+							CaptionPosition=None
+							CheckSum=T
+							Text='[#terminal_imei#]'
+							Object Font
+								Name='宋体'
+								Size=142500,0
+								Weight=400
+								Charset=134
+							End
+						End
+					End
+				End
+			End
+		End
+		Object ColumnTitle
+			Visible=F
+			Height=1.13771
+			RepeatStyle=OnGroupHeader
+			Items ColumnTitleCell
+				Item
+					GroupTitle=F
+					Column='TerminalImei'
+				End
+			End
+		End
+		Items Group
+			Item
+				Name='Group1'
+				ByFields='terminal_imei'
+				Object GroupHeader
+					Visible=F
+					Height=0.873125
+				End
+				Object GroupFooter
+					Visible=F
+					Height=0.740833
+					NewPage=After
+				End
+			End
+		End
+	End
+End

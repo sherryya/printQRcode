@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+</head>
+<body>
+
+
+
+<table class="cssTable">
+
+<tr>
+<td class="cssDataCell"><a href="data/GetTerminalList.jsp" target="_blank">数据库</a></td>
+<td class="cssDataCell"><a href="General/PrintReport.jsp?report=qr.grf&amp;data=data/xmlCustomer.jsp" target="_blank">二维码</a></td>
+
+
+</tr>
+
+</table>
+
+
+
+
+</body>
+</html>
